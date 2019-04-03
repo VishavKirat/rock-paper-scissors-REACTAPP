@@ -17,12 +17,12 @@ class App extends Component {
 
   GameResult = () =>{
     const {left,right} = this.state
-    if(left == right){
+    if(left === right){
      return 'It is a draw mate !! You can do better'
     }
-    if(left =='scissors' && right=='paper' ||
-       left =='rock' && right=='scissor' || 
-       left =='paper' && right=='rock' ){
+    if(left ==='scissors' && right==='paper' ||
+       left ==='rock' && right==='scissor' || 
+       left ==='paper' && right==='rock' ){
          return 'It is a win. You just got lucky this time!! '
        }
     else{
@@ -43,7 +43,7 @@ class App extends Component {
       })
       if(this.state.count > 15){
         clearInterval(content);
-        this.setState({ winner:this.GameResult()})
+        this.setState({count:0, winner:this.GameResult()})
       }
     }, 100);    
   }
